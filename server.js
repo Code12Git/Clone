@@ -4,7 +4,7 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import cors from "cors";
 import Router from "./routes/auth.js";
-import router from "./routes/user.js";
+
 const app = express();
 
 dotenv.config();
@@ -14,7 +14,7 @@ app.use(cors());
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/api/auth", Router);
-app.use("/api/users", router);
+
 connection();
 
 app.get("/", (req, res) => {
